@@ -138,10 +138,7 @@ button:focus {
 
 /* Responsive Adjustments */
 @media (max-width: 400px) {
-  .calculator {
-    padding: 20px;
-    width: 90%;
-  }
+
   #result {
     font-size: 1.8rem;
   }
