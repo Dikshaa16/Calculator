@@ -1,0 +1,152 @@
+/* General reset and setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f5f5; /* Clean background */
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Calculator Container */
+.calculator {
+  background: #ffffff; /* Clean white background */
+  border-radius: 20px;
+  padding: 30px;
+  width: 450px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* Ensure padding doesn't overflow */
+}
+
+/* Display section */
+.display {
+  margin-bottom: 25px;
+}
+
+#result {
+  width: 100%;
+  height: 60px;
+  font-size: 2.2rem;
+  padding: 10px;
+  text-align: right;
+  background-color: #f1f1f1; /* Light grey background */
+  border: 1px solid #ccc; /* Subtle border for the input */
+  border-radius: 10px;
+  color: #333; /* Dark text for good contrast */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#result:focus {
+  outline: none;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(56, 145, 255, 0.7); /* Blue glow effect */
+}
+
+/* Button Layout */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  font-size: 1.8rem;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f2f2f2; /* Light button color */
+  color: #333;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd; /* Subtle borders around buttons */
+}
+
+.btn:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  background-color: #ccc;
+  transform: scale(0.95);
+}
+
+/* Operator Buttons */
+.operator {
+  background-color: #ffa500; /* Bright orange for operators */
+  color: white;
+}
+
+.operator:hover {
+  background-color: #ff8c00; /* Darker orange on hover */
+}
+
+/* Equal Button */
+.equal {
+  background-color: #4caf50; /* Green for equal button */
+  color: white;
+  grid-column: span 2; /* Makes the equal button span across two columns */
+}
+
+.equal:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Memory Buttons */
+.memory {
+  background-color: #ff6347; /* Tomato red for memory buttons */
+  color: white;
+}
+
+.memory:hover {
+  background-color: #e55347; /* Darker red on hover */
+}
+
+/* Scientific Functions (new colors for trigonometric and log) */
+.sin, .cos, .tan, .log, .pi {
+  background-color: #673ab7; /* Deep purple for scientific functions */
+  color: white;
+}
+
+.sin:hover, .cos:hover, .tan:hover, .log:hover, .pi:hover {
+  background-color: #5e35b1; /* Darker purple on hover */
+}
+
+.ce {
+  background-color: #8e44ad; /* Purple for clear entry */
+  color: white;
+}
+
+.ce:hover {
+  background-color: #7d3c8c; /* Darker purple on hover */
+}
+
+/* Focus and Active States */
+button:focus {
+  outline: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 400px) {
+  .calculator {
+    padding: 20px;
+    width: 90%;
+  }
+  #result {
+    font-size: 1.8rem;
+  }
+  .btn {
+    font-size: 1.6rem;
+    padding: 15px;
+  }
+}
