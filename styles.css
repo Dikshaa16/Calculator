@@ -20,11 +20,11 @@ body {
   background: #ffffff; /* Clean white background */
   border-radius: 20px;
   padding: 30px;
-  width: 450px;
+  width: 90%; /* Responsive width */
+  max-width: 450px; /* Limit the width on larger screens */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   display: flex;
   flex-direction: column;
-  box-sizing: border-box; /* Ensure padding doesn't overflow */
 }
 
 /* Display section */
@@ -35,40 +35,40 @@ body {
 #result {
   width: 100%;
   height: 60px;
-  font-size: 2.2rem;
+  font-size: 2rem; /* Adjust size for better responsiveness */
   padding: 10px;
   text-align: right;
-  background-color: #f1f1f1; /* Light grey background */
-  border: 1px solid #ccc; /* Subtle border for the input */
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
   border-radius: 10px;
-  color: #333; /* Dark text for good contrast */
+  color: #333;
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
 }
 
 #result:focus {
   outline: none;
-  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(56, 145, 255, 0.7); /* Blue glow effect */
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(56, 145, 255, 0.7);
 }
 
 /* Button Layout */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 10px; /* Adjust gap for smaller screens */
 }
 
 .btn {
-  font-size: 1.8rem;
-  padding: 18px;
+  font-size: 1.6rem; /* Smaller size for buttons */
+  padding: 15px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  background-color: #f2f2f2; /* Light button color */
+  background-color: #f2f2f2;
   color: #333;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd; /* Subtle borders around buttons */
+  border: 1px solid #ddd;
 }
 
 .btn:hover {
@@ -83,67 +83,68 @@ body {
 
 /* Operator Buttons */
 .operator {
-  background-color: #ffa500; /* Bright orange for operators */
+  background-color: #ffa500;
   color: white;
 }
 
 .operator:hover {
-  background-color: #ff8c00; /* Darker orange on hover */
+  background-color: #ff8c00;
 }
 
 /* Equal Button */
 .equal {
-  background-color: #4caf50; /* Green for equal button */
+  background-color: #4caf50;
   color: white;
-  grid-column: span 2; /* Makes the equal button span across two columns */
+  grid-column: span 2;
 }
 
 .equal:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049;
 }
 
-/* Memory Buttons */
-.memory {
-  background-color: #ff6347; /* Tomato red for memory buttons */
-  color: white;
-}
-
-.memory:hover {
-  background-color: #e55347; /* Darker red on hover */
-}
-
-/* Scientific Functions (new colors for trigonometric and log) */
+/* Scientific Functions */
 .sin, .cos, .tan, .log, .pi {
-  background-color: #673ab7; /* Deep purple for scientific functions */
+  background-color: #673ab7;
   color: white;
 }
 
 .sin:hover, .cos:hover, .tan:hover, .log:hover, .pi:hover {
-  background-color: #5e35b1; /* Darker purple on hover */
+  background-color: #5e35b1;
 }
 
 .ce {
-  background-color: #8e44ad; /* Purple for clear entry */
+  background-color: #8e44ad;
   color: white;
 }
 
 .ce:hover {
-  background-color: #7d3c8c; /* Darker purple on hover */
+  background-color: #7d3c8c;
 }
 
-/* Focus and Active States */
-button:focus {
-  outline: none;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 400px) {
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 1.4rem;
+    padding: 12px; /* Smaller padding on medium screens */
+  }
 
   #result {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Reduce font size on medium screens */
   }
+}
+
+@media (max-width: 480px) {
+  .buttons {
+    gap: 8px; /* Smaller gap for small screens */
+  }
+
   .btn {
-    font-size: 1.6rem;
-    padding: 15px;
+    font-size: 1.2rem;
+    padding: 10px; /* Smaller padding for small screens */
+  }
+
+  #result {
+    height: 50px; /* Reduce input height */
+    font-size: 1.6rem; /* Adjust size for small screens */
   }
 }
